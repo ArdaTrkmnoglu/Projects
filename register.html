@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giriş Yap - Avukat Bul</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background-color: #422c50;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .search-container, .auth-container {
+      padding: 2rem;
+      text-align: center;
+    }
+    .search-container input, .search-container select, .auth-container input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .lawyer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .lawyer-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .lawyer-card h3 {
+      margin-top: 0;
+    }
+    #lawyerDetail {
+      display: none;
+      background: white;
+      margin: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #backButton {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Avukat Bul</h1>
+    <p>Alanına Göre Uzman Avukatları Bulun</p>
+  </header>
+
+  <div class="auth-container">
+    <h2>Giriş / Kayıt</h2>
+    <input type="text" id="username" placeholder="Kullanıcı adı">
+    <input type="password" id="password" placeholder="Şifre">
+    <button onclick="login()">Giriş Yap</button>
+    <button onclick="register()">Kayıt Ol</button>
+    <p id="authMessage"></p>
+  </div>
+
+</body>

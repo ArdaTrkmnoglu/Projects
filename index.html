@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avukat Bul - Hukuk Uzmanları Rehberi</title>
+  <title>Ana Sayfa - Avukat Bul</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,17 +12,20 @@
       background: #f9f9f9;
     }
     header {
-      background-color: #4f2c50;
+      background-color: #422c50;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: white;
       padding: 1rem;
       text-align: center;
     }
-    .search-container {
+    .register {
+      padding: 0.5rem;
+    }
+    .search-container, .auth-container {
       padding: 2rem;
       text-align: center;
     }
-    .search-container input, .search-container select {
+    .search-container input, .search-container select, .auth-container input {
       padding: 0.5rem;
       font-size: 1rem;
       margin: 0.5rem;
@@ -38,9 +41,24 @@
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
     }
     .lawyer-card h3 {
       margin-top: 0;
+    }
+    #lawyerDetail {
+      display: none;
+      background: white;
+      margin: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #backButton {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -49,9 +67,13 @@
     <h1>Avukat Bul</h1>
     <p>Alanına Göre Uzman Avukatları Bulun</p>
   </header>
-  
+
+  <div class="register">
+    <a src="register.html">Giriş Yap / Kayıt Ol</a>
+  </div>
+
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Avukat ismi veya şehir...">
+    <input type="text" id="searchInput" placeholder="Avukat ismi, şehir veya büro...">
     <select id="fieldSelect">
       <option value="">Tüm Alanlar</option>
       <option value="Ceza Hukuku">Ceza Hukuku</option>
@@ -59,25 +81,65 @@
       <option value="Aile Hukuku">Aile Hukuku</option>
       <option value="İş Hukuku">İş Hukuku</option>
     </select>
+    <select id="experienceSelect">
+      <option value="">Tüm Tecrübeler</option>
+      <option value="1">1 yıldan fazla</option>
+      <option value="3">3 yıldan fazla</option>
+      <option value="5">5 yıldan fazla</option>
+    </select>
+    <select id="languageSelect">
+      <option value="">Tüm Diller</option>
+      <option value="Türkçe">Türkçe</option>
+      <option value="İngilizce">İngilizce</option>
+      <option value="Almanca">Almanca</option>
+    </select>
     <button onclick="filterLawyers()">Ara</button>
   </div>
 
-  <div class="lawyer-list" id="lawyerList">
-    <!-- Avukat kartları burada olacak -->
-  </div>
+  <div class="lawyer-list" id="lawyerList"></div>
+
+  <div id="lawyerDetail"></div>
 
   <script>
+    let users = [];
+    let currentUser = null;
+
+    function register() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (users.some(u => u.username === username)) {
+        document.getElementById('authMessage').innerText = 'Bu kullanıcı adı zaten kayıtlı.';
+      } else {
+        users.push({ username, password });
+        document.getElementById('authMessage').innerText = 'Kayıt başarılı!';
+      }
+    }
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const user = users.find(u => u.username === username && u.password === password);
+      if (user) {
+        currentUser = user;
+        document.getElementById('authMessage').innerText = `Hoş geldin, ${username}!`;
+      } else {
+        document.getElementById('authMessage').innerText = 'Geçersiz kullanıcı adı veya şifre.';
+      }
+    }
+
     const lawyers = [
-      { name: "Av. Ahmet Yılmaz", field: "Ceza Hukuku", city: "İstanbul" },
-      { name: "Av. Elif Demir", field: "Ticaret Hukuku", city: "Ankara" },
-      { name: "Av. Ayşe Kaya", field: "Aile Hukuku", city: "İzmir" },
-      { name: "Av. Mehmet Çelik", field: "İş Hukuku", city: "Bursa" },
-      { name: "Av. Selin Toprak", field: "Ceza Hukuku", city: "İstanbul" }
+      { id: 1, name: "Av. Ahmet Yılmaz", field: "Ceza Hukuku", city: "İstanbul", experience: 6, languages: ["Türkçe"], bio: "Ceza hukuku alanında 6 yıllık tecrübe. İstanbul Barosu üyesi." },
+      { id: 2, name: "Av. Elif Demir", field: "Ticaret Hukuku", city: "Ankara", experience: 4, languages: ["Türkçe", "İngilizce"], bio: "Ticaret ve sözleşme hukuku uzmanı. Şirket danışmanlığı sağlar." },
+      { id: 3, name: "Av. Ayşe Kaya", field: "Aile Hukuku", city: "İzmir", experience: 2, languages: ["Türkçe"], bio: "Boşanma ve velayet davalarında uzman avukat." },
+      { id: 4, name: "Av. Mehmet Çelik", field: "İş Hukuku", city: "Bursa", experience: 8, languages: ["Türkçe", "Almanca"], bio: "İşçi ve işveren davalarında temsil tecrübesi." },
+      { id: 5, name: "Av. Selin Toprak", field: "Ceza Hukuku", city: "İstanbul", experience: 5, languages: ["Türkçe", "İngilizce"], bio: "Ceza davaları ve soruşturmalarda etkin temsil." }
     ];
 
     function displayLawyers(filteredLawyers) {
       const container = document.getElementById('lawyerList');
       container.innerHTML = '';
+      document.getElementById('lawyerDetail').style.display = 'none';
+      container.style.display = 'grid';
       filteredLawyers.forEach(lawyer => {
         const card = document.createElement('div');
         card.className = 'lawyer-card';
@@ -85,23 +147,46 @@
           <h3>${lawyer.name}</h3>
           <p><strong>Alan:</strong> ${lawyer.field}</p>
           <p><strong>Şehir:</strong> ${lawyer.city}</p>
+          <p><strong>Tecrübe:</strong> ${lawyer.experience} yıl</p>
+          <p><strong>Diller:</strong> ${lawyer.languages.join(", ")}</p>
         `;
+        card.onclick = () => showLawyerDetail(lawyer);
         container.appendChild(card);
       });
+    }
+
+    function showLawyerDetail(lawyer) {
+      const detail = document.getElementById('lawyerDetail');
+      detail.innerHTML = `
+        <h2>${lawyer.name}</h2>
+        <p><strong>Uzmanlık Alanı:</strong> ${lawyer.field}</p>
+        <p><strong>Şehir:</strong> ${lawyer.city}</p>
+        <p><strong>Tecrübe:</strong> ${lawyer.experience} yıl</p>
+        <p><strong>Diller:</strong> ${lawyer.languages.join(", ")}</p>
+        <p><strong>Hakkında:</strong> ${lawyer.bio}</p>
+        <button id="backButton" onclick="filterLawyers()">← Geri</button>
+      `;
+      document.getElementById('lawyerList').style.display = 'none';
+      detail.style.display = 'block';
     }
 
     function filterLawyers() {
       const searchInput = document.getElementById('searchInput').value.toLowerCase();
       const field = document.getElementById('fieldSelect').value;
+      const experience = parseInt(document.getElementById('experienceSelect').value) || 0;
+      const language = document.getElementById('languageSelect').value;
+
       const filtered = lawyers.filter(lawyer => {
         const matchesNameOrCity = lawyer.name.toLowerCase().includes(searchInput) || lawyer.city.toLowerCase().includes(searchInput);
         const matchesField = field === '' || lawyer.field === field;
-        return matchesNameOrCity && matchesField;
+        const matchesExperience = lawyer.experience >= experience;
+        const matchesLanguage = language === '' || lawyer.languages.includes(language);
+        return matchesNameOrCity && matchesField && matchesExperience && matchesLanguage;
       });
+
       displayLawyers(filtered);
     }
 
-    // Sayfa ilk yüklendiğinde tüm avukatları göster
     window.onload = () => displayLawyers(lawyers);
   </script>
 </body>
