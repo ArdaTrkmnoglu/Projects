@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avukat Bul - Hukuk Uzmanları Rehberi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background-color: #4f2c50;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .search-container {
+      padding: 2rem;
+      text-align: center;
+    }
+    .search-container input, .search-container select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .lawyer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .lawyer-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .lawyer-card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Avukat Bul</h1>
+    <p>Alanına Göre Uzman Avukatları Bulun</p>
+  </header>
+  
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Avukat ismi veya şehir...">
+    <select id="fieldSelect">
+      <option value="">Tüm Alanlar</option>
+      <option value="Ceza Hukuku">Ceza Hukuku</option>
+      <option value="Ticaret Hukuku">Ticaret Hukuku</option>
+      <option value="Aile Hukuku">Aile Hukuku</option>
+      <option value="İş Hukuku">İş Hukuku</option>
+    </select>
+    <button onclick="filterLawyers()">Ara</button>
+  </div>
+
+  <div class="lawyer-list" id="lawyerList">
+    <!-- Avukat kartları burada olacak -->
+  </div>
+
+  <script>
+    const lawyers = [
+      { name: "Av. Ahmet Yılmaz", field: "Ceza Hukuku", city: "İstanbul" },
+      { name: "Av. Elif Demir", field: "Ticaret Hukuku", city: "Ankara" },
+      { name: "Av. Ayşe Kaya", field: "Aile Hukuku", city: "İzmir" },
+      { name: "Av. Mehmet Çelik", field: "İş Hukuku", city: "Bursa" },
+      { name: "Av. Selin Toprak", field: "Ceza Hukuku", city: "İstanbul" }
+    ];
+
+    function displayLawyers(filteredLawyers) {
+      const container = document.getElementById('lawyerList');
+      container.innerHTML = '';
+      filteredLawyers.forEach(lawyer => {
+        const card = document.createElement('div');
+        card.className = 'lawyer-card';
+        card.innerHTML = `
+          <h3>${lawyer.name}</h3>
+          <p><strong>Alan:</strong> ${lawyer.field}</p>
+          <p><strong>Şehir:</strong> ${lawyer.city}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterLawyers() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const field = document.getElementById('fieldSelect').value;
+      const filtered = lawyers.filter(lawyer => {
+        const matchesNameOrCity = lawyer.name.toLowerCase().includes(searchInput) || lawyer.city.toLowerCase().includes(searchInput);
+        const matchesField = field === '' || lawyer.field === field;
+        return matchesNameOrCity && matchesField;
+      });
+      displayLawyers(filtered);
+    }
+
+    // Sayfa ilk yüklendiğinde tüm avukatları göster
+    window.onload = () => displayLawyers(lawyers);
+  </script>
+</body>
+</html>
