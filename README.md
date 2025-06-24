@@ -1,7 +1,7 @@
 # 🧠 [README.md] Projects - Arda Türkmenoğlu
 
 📍 **Tarih:** 1 Temmuz – 25 Ağustos 2025  
-🎯 **Hedef:** C++, JavaScript, Rust öğrenmek. DSA ve Asenkron Networking konularında uzmanlaşmak.
+🎯 **Hedef:** C++, JavaScript ve Assembly öğrenmek. DSA ve Asenkron Networking konularında uzmanlaşmak.
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Zaman   | Odak                    | Açıklama                                               |
 |---------|-------------------------|--------------------------------------------------------|
-| Gündüz  | Yeni konular            | C++, JavaScript, Rust, DSA, async networking öğrenimi  |
+| Gündüz  | Yeni konular            | C++, JavaScript, Assembly, DSA, async networking       |
 | Gece    | Derinleştirme & tekrar  | LeetCode, mini projeler, uygulama, teknik okuma        |
 
 ---
@@ -20,13 +20,13 @@
 
 | Gün       | Gündüz                                      | Gece                                     |
 |-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ temel syntax, input/output, pointers    | LeetCode Easy: arrays                    |
+| Pazartesi | C++ syntax, pointers, memory basics         | LeetCode Easy: arrays                    |
 | Salı      | JS temel sözdizimi, değişkenler, DOM        | DOM manipulation mini örnek              |
-| Çarşamba  | Rust kurulumu, `let`, `fn`, `match`         | The Rust Book böl. 1–2                   |
+| Çarşamba  | Assembly'e giriş: binary, hex, registers    | NASM kurulumu, Hello World               |
 | Perşembe  | C++ Linked List, Stack                      | LeetCode 5 Easy soru                     |
-| Cuma      | Networking temelleri (IP, TCP, UDP nedir?)  | JS: fetch ile veri çekme örneği          |
-| Cumartesi | JS ile To-Do List projesine başla           | Commit et, düzenle, tekrar et            |
-| Pazar     | Hafif tekrar                                | CS50 veya networking videosu             |
+| Cuma      | Networking temelleri (IP, TCP, UDP nedir?)  | JS: fetch ile veri çekme örneği         |
+| Cumartesi | JS To-Do List projesi                       | Geri bildirimlerle düzenleme             |
+| Pazar     | Hafif tekrar                                 | CS50 veya Networking videoları           |
 
 ---
 
@@ -34,13 +34,13 @@
 
 | Gün       | Gündüz                                      | Gece                                     |
 |-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Queue + Recursion                       | LeetCode Easy-Medium sorular             |
-| Salı      | JS Arrays, Events                           | Not alma mini uygulaması                 |
-| Çarşamba  | Rust ownership, borrowing                   | Dosya okuma CLI örneği                   |
-| Perşembe  | C++ Merge sort, Quick sort                  | Konu tekrarı + soru çözümü               |
-| Cuma      | TCP, ports, sockets                         | Wireshark ile paket takibi               |
-| Cumartesi | JS Hava durumu API projesi                  | Hata ayıklama, görsel düzenleme          |
-| Pazar     | Hafif tekrar                                | YouTube ders / teknik okuma              |
+| Pazartesi | C++ Queue, Recursion                        | LeetCode Medium'a geçiş                  |
+| Salı      | JS arrays, event listeners                  | Not alma mini uygulaması                 |
+| Çarşamba  | Assembly: stack, mov, add, sub komutları    | Register ve stack trace pratikleri       |
+| Perşembe  | Merge sort, Quick sort                      | Sorular çöz                              |
+| Cuma      | TCP, ports, sockets                         | Packet flow görselleştirme               |
+| Cumartesi | JS Hava durumu API projesi                  | Projeyi tamamlama, test etme             |
+| Pazar     | Hafif tekrar                                | Teknik video ya da okuma                 |
 
 ---
 
@@ -48,13 +48,13 @@
 
 | Gün       | Gündüz                                      | Gece                                     |
 |-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Binary Tree, traversal                  | LeetCode Medium sorular                  |
-| Salı      | JS fetch, JSON parsing                      | Hava durumu projesine devam              |
-| Çarşamba  | Rust enums, `Option`, `Result`              | CLI uygulama: kelime sayacı              |
-| Perşembe  | C++ DFS, BFS                                | Soru çözümü + kavram özeti               |
-| Cuma      | Rust async fn, tokio kurulumu               | async örnek: timer, spawn                |
-| Cumartesi | Echo TCP sunucusu (Rust tokio)              | Test yaz + loglama                       |
-| Pazar     | Hafif tekrar                                | Blog yazısı veya sistem okuması          |
+| Pazartesi | C++ Trees, DFS, BFS                         | Tree tabanlı LeetCode soruları           |
+| Salı      | JS async/await, JSON                        | API ile çalışan örnek proje              |
+| Çarşamba  | Assembly: koşullu dallanma, döngüler        | Basit sayı tahmin oyunu (ASM)            |
+| Perşembe  | Trie, HashMap kavramları                    | Soru çözümü                              |
+| Cuma      | Asenkron model yapıları                     | TCP/UDP analiz, async demo (JS)          |
+| Cumartesi | Assembly input/output                      | Kullanıcı girişiyle mini program         |
+| Pazar     | Hafif tekrar                                | Teknik özet hazırlama                    |
 
 ---
 
@@ -62,13 +62,13 @@
 
 | Gün       | Gündüz                                      | Gece                                     |
 |-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Heap, Priority Queue                    | LeetCode soruları                        |
-| Salı      | JS Promises, async/await                    | API ile kullanıcı listesi uygulaması     |
-| Çarşamba  | Rust async TCP socket                       | Echo server debug / log                  |
-| Perşembe  | C++ Trie, HashMap                           | Soru çözümü                              |
-| Cuma      | Rust socket programming                     | Kod tekrarı ve iyileştirme               |
-| Cumartesi | Rust mini async proje                       | Commit ve dökümantasyon                  |
-| Pazar     | Hafif tekrar + İngilizce video              | Teknik doküman okuma                     |
+| Pazartesi | C++ Heaps, Priority Queue                   | Heap tabanlı LeetCode soruları           |
+| Salı      | JS küçük proje (not alma uygulaması)        | Async veri kaydetme fonksiyonu           |
+| Çarşamba  | Assembly: fonksiyon çağırma, stack frame    | Stack trace analizleri                   |
+| Perşembe  | Graphs: Dijkstra, BFS                       | Graph soruları çöz                       |
+| Cuma      | Asenkron örnek protokol akışı               | JS / C ile örnek mesajlaşma              |
+| Cumartesi | Assembly proje günü                         | Hesap makinesi ya da dosya işleme        |
+| Pazar     | Hafif tekrar                                | CS50/6.004 videoları                     |
 
 ---
 
@@ -77,16 +77,16 @@
 ### 🎯 Odak: Derinleştirme, projeler, portföy oluşturma
 
 #### ✅ HAFTA 5:
-- Gündüz: Rust HTTP sunucu (hyper, warp)
-- Gece: Error handling, logging, middleware yapıları
+- Gündüz: Assembly ile dosya okuma/yazma yap
+- Gece: C++ tekrarı + JS projeleri debug
 
 #### ✅ HAFTA 6:
-- Gündüz: C++ Graph konuları (Dijkstra, BFS)
-- Gece: LeetCode Graph soruları
+- Gündüz: C++ graph algoritmaları / STL tekrar
+- Gece: LeetCode Medium–Hard karışık sorular
 
 #### ✅ HAFTA 7:
-- Gündüz: JS Framework (React’e giriş)
-- Gece: Not alma uygulaması (React tabanlı)
+- Gündüz: JS Framework’e giriş (React ya da Vanilla ilerletme)
+- Gece: Not alma uygulaması (localStorage)
 
 #### ✅ HAFTA 8:
 - Gündüz: Tüm projeleri toparla, dökümante et
@@ -100,7 +100,7 @@
 |--------------------------------|--------------------------------------------------|
 | 🎤 İngilizce teknik anlatım    | Haftada 1 defa kendi sesinle konu anlatımı yap  |
 | 📝 Haftalık öğrenim özeti      | Notion / Markdown ile haftalık özet çıkart      |
-| 📂 Proje portföyü              | Yaz sonunda en az 3 proje: C++, JS, Rust        |
+| 📂 Proje portföyü              | Yaz sonunda en az 3 proje: C++, JS, ASM         |
 
 ---
 
@@ -108,8 +108,9 @@
 
 - **C++ & DSA:** NeetCode, William Fiset, LeetCode
 - **JavaScript:** [javascript.info](https://javascript.info), freeCodeCamp
-- **Rust:** [The Rust Book](https://doc.rust-lang.org/book/), Tokio
-- **Networking:** Beej’s Guide, Tokio, Boost.Asio
+- **Assembly:** [x86 Assembly Guide](https://cs.lmu.edu/~ray/notes/x86assembly/), NASM Docs, [PC Assembly (Paul Carter)](https://pacman128.github.io/static/pcasm-book.pdf)
+- **Networking:** Beej’s Guide, Fireship, Wireshark
 - **CS Videos:** Harvard CS50, MIT 6.006, Fireship (YouTube)
+
 
 ---
