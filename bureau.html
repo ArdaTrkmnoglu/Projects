@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detay - avukatım.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6c00ac;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #6c00ac;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #6c00ac;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <h1>avukatım.com</h1>
+        <p>Alanına Göre Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
+    </header>
+  <div class="container" id="bureauDetail">
+    <h2>Yükleniyor...</h2>
+  </div>
+
+  <script>
+    const bureaus = [
+      { id: 1, name: "Erciyes Hukuk Bürosu", field: "Ceza Hukuku", city: "İstanbul", description: "Ceza hukuku davalarında uzman kadro.", phone: "(0212) 123 45 67", address: "Beyoğlu, İstanbul", hours: "09:00 - 18:00" },
+      { id: 2, name: "Demirler Hukuk", field: "Ticaret Hukuku", city: "Ankara", description: "Ticaret, şirket danışmanlığı ve sözleşme yönetimi.", phone: "(0312) 234 56 78", address: "Çankaya, Ankara", hours: "08:30 - 17:30" },
+      { id: 3, name: "Kaya Hukuk", field: "Aile Hukuku", city: "İzmir", description: "Aile içi davalarda profesyonel temsil.", phone: "(0232) 345 67 89", address: "Konak, İzmir", hours: "09:00 - 18:00" },
+      { id: 4, name: "Çelik Hukuk Ofisi", field: "İş Hukuku", city: "Bursa", description: "İşçi-işveren ilişkilerinde dava ve danışmanlık.", phone: "(0224) 456 78 90", address: "Osmangazi, Bursa", hours: "08:00 - 17:00" },
+      { id: 5, name: "Toprak Legal", field: "Ceza Hukuku", city: "İstanbul", description: "Ceza davaları, savunma ve temsil.", phone: "(0212) 567 89 01", address: "Kadıköy, İstanbul", hours: "10:00 - 19:00" }
+    ];
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function displayBureauDetail() {
+      const id = parseInt(getQueryParam("id"));
+      const bureau = bureaus.find(b => b.id === id);
+
+      const container = document.getElementById("bureauDetail");
+      if (!bureau) {
+        container.innerHTML = '<h1>Büro bulunamadı.</h1>';
+        return;
+      }
+
+      container.innerHTML = `
+        <h1>${bureau.name}</h1>
+        <p><strong>Uzmanlık Alanı:</strong> ${bureau.field}</p>
+        <p><strong>Şehir:</strong> ${bureau.city}</p>
+        <p><strong>Telefon:</strong> ${bureau.phone}</p>
+        <p><strong>Adres:</strong> ${bureau.address}</p>
+        <p><strong>Çalışma Saatleri:</strong> ${bureau.hours}</p>
+        <p><strong>Açıklama:</strong> ${bureau.description}</p>
+        <a href="index.html" class="back-link">← Geri Dön</a>
+      `;
+    }
+
+    window.onload = displayBureauDetail;
+  </script>
+</body>
+</html>
