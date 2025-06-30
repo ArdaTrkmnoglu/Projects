@@ -1,116 +1,100 @@
 # 🧠 [README.md] Projects - Arda Türkmenoğlu
 
 📍 **Tarih:** 1 Temmuz – 25 Ağustos 2025  
-🎯 **Hedef:** C++, JavaScript ve Assembly öğrenmek. DSA ve Asenkron Networking konularında uzmanlaşmak.
+🎯 **Hedef:** C++, JavaScript, Rust ve Assembly öğrenmek. DSA ve Asenkron Networking konularında uzmanlaşmak.
 
 ---
 
-## 📅 Haftalık Program (Genel Çerçeve)
+## 📅 Haftalık Program (Genel Yapı)
 
-| Zaman   | Odak                    | Açıklama                                               |
-|---------|-------------------------|--------------------------------------------------------|
-| Gündüz  | Yeni konular            | C++, JavaScript, Assembly, DSA, async networking       |
-| Gece    | Derinleştirme & tekrar  | LeetCode, mini projeler, uygulama, teknik okuma        |
-
----
-
-## 📌 8 Haftalık Görev Takvimi
-
-### ✅ HAFTA 1 (1–7 Temmuz)
-
-| Gün       | Gündüz                                      | Gece                                     |
-|-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ syntax, pointers, memory basics         | LeetCode Easy: arrays                    |
-| Salı      | JS temel sözdizimi, değişkenler, DOM        | DOM manipulation mini örnek              |
-| Çarşamba  | Assembly'e giriş: binary, hex, registers    | NASM kurulumu, Hello World               |
-| Perşembe  | C++ Linked List, Stack                      | LeetCode 5 Easy soru                     |
-| Cuma      | Networking temelleri (IP, TCP, UDP nedir?)  | JS: fetch ile veri çekme örneği         |
-| Cumartesi | JS To-Do List projesi                       | Geri bildirimlerle düzenleme             |
-| Pazar     | Hafif tekrar                                 | CS50 veya Networking videoları           |
+| Zaman   | Odak                    | Açıklama                                                 |
+|---------|-------------------------|----------------------------------------------------------|
+| Gündüz  | Yeni konular            | C++, JavaScript, Rust, Assembly, DSA, networking         |
+| Gece    | Derinleştirme & tekrar  | LeetCode, mini projeler, Assembly egzersizleri, teknik okuma |
 
 ---
 
-### ✅ HAFTA 2 (8–14 Temmuz)
+## 🔁 Haftalık Odak Planı
 
-| Gün       | Gündüz                                      | Gece                                     |
-|-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Queue, Recursion                        | LeetCode Medium'a geçiş                  |
-| Salı      | JS arrays, event listeners                  | Not alma mini uygulaması                 |
-| Çarşamba  | Assembly: stack, mov, add, sub komutları    | Register ve stack trace pratikleri       |
-| Perşembe  | Merge sort, Quick sort                      | Sorular çöz                              |
-| Cuma      | TCP, ports, sockets                         | Packet flow görselleştirme               |
-| Cumartesi | JS Hava durumu API projesi                  | Projeyi tamamlama, test etme             |
-| Pazar     | Hafif tekrar                                | Teknik video ya da okuma                 |
-
----
-
-### ✅ HAFTA 3 (15–21 Temmuz)
-
-| Gün       | Gündüz                                      | Gece                                     |
-|-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Trees, DFS, BFS                         | Tree tabanlı LeetCode soruları           |
-| Salı      | JS async/await, JSON                        | API ile çalışan örnek proje              |
-| Çarşamba  | Assembly: koşullu dallanma, döngüler        | Basit sayı tahmin oyunu (ASM)            |
-| Perşembe  | Trie, HashMap kavramları                    | Soru çözümü                              |
-| Cuma      | Asenkron model yapıları                     | TCP/UDP analiz, async demo (JS)          |
-| Cumartesi | Assembly input/output                      | Kullanıcı girişiyle mini program         |
-| Pazar     | Hafif tekrar                                | Teknik özet hazırlama                    |
+| Gün        | Gündüz                            | Gece                                             |
+|------------|-----------------------------------|--------------------------------------------------|
+| **Pazartesi** |  **Assembly (x86 NASM)**       | **Assembly kodlama + öğrenim**                   |
+| Salı       | JavaScript                        | JS mini proje (Todo, API, arayüz)                |
+| Çarşamba   | Rust                              | Rust CLI / async örnek                           |
+| Perşembe   | C++ / DSA                         | LeetCode soru çözümü                             |
+| Cuma       | Async Networking (Rust/C++)       | TCP/UDP sunucu yazımı, socket denemeleri         |
+| Cumartesi  | Proje geliştirme                  | Refactor, dokümantasyon, ilerleme analizi        |
+| Pazar      | Hafif tekrar, serbest çalışma     | Sistem tasarımı, İngilizce video/okuma           |
 
 ---
 
-### ✅ HAFTA 4 (22–28 Temmuz)
+## 📌 8 Haftalık Görev Takvimi (Günlük Plan)
 
-| Gün       | Gündüz                                      | Gece                                     |
-|-----------|---------------------------------------------|------------------------------------------|
-| Pazartesi | C++ Heaps, Priority Queue                   | Heap tabanlı LeetCode soruları           |
-| Salı      | JS küçük proje (not alma uygulaması)        | Async veri kaydetme fonksiyonu           |
-| Çarşamba  | Assembly: fonksiyon çağırma, stack frame    | Stack trace analizleri                   |
-| Perşembe  | Graphs: Dijkstra, BFS                       | Graph soruları çöz                       |
-| Cuma      | Asenkron örnek protokol akışı               | JS / C ile örnek mesajlaşma              |
-| Cumartesi | Assembly proje günü                         | Hesap makinesi ya da dosya işleme        |
-| Pazar     | Hafif tekrar                                | CS50/6.004 videoları                     |
+### ✅ HAFTA 1 (1–6 Temmuz)
 
----
+- **Gündüz:** C++ temel sözdizimi, JS giriş, Rust kurulumu, Assembly ortam kurulumu (NASM)
+- **Gece:** LeetCode Easy (Arrays), basit JS uygulama, Rust Book böl. 1–2, ilk `mov`/`add` NASM kodu
 
-## 🛠️ HAFTA 5–8 (29 Temmuz – 25 Ağustos)
+### ✅ HAFTA 2 (7–13 Temmuz)
 
-### 🎯 Odak: Derinleştirme, projeler, portföy oluşturma
+- **Gündüz:** C++ Linked List/Queue/Stack, JS DOM + events, Rust ownership, Assembly input/output
+- **Gece:** LeetCode + CLI programı, DOM uygulaması, Assembly ile "Hello, World!" yazdırma
 
-#### ✅ HAFTA 5:
-- Gündüz: Assembly ile dosya okuma/yazma yap
-- Gece: C++ tekrarı + JS projeleri debug
+### ✅ HAFTA 3 (14–20 Temmuz)
 
-#### ✅ HAFTA 6:
-- Gündüz: C++ graph algoritmaları / STL tekrar
-- Gece: LeetCode Medium–Hard karışık sorular
+- **Gündüz:** Rust enums & Result, C++ Recursion, JS fetch, Assembly loop/conditionals
+- **Gece:** Echo server fikri (Rust tokio), LeetCode Medium, NASM `cmp`, `jne`, `loop`
 
-#### ✅ HAFTA 7:
-- Gündüz: JS Framework’e giriş (React ya da Vanilla ilerletme)
-- Gece: Not alma uygulaması (localStorage)
+### ✅ HAFTA 4 (21–27 Temmuz)
 
-#### ✅ HAFTA 8:
-- Gündüz: Tüm projeleri toparla, dökümante et
-- Gece: “Yazın öğrendiklerim” sunumu hazırla (PDF/slayt)
+- **Gündüz:** C++ Sorting (merge/quick), Rust async (tokio), JS async/await, Assembly’de diziler
+- **Gece:** API tabanlı JS proje, async TCP denemesi, Assembly mini hesap makinesi
 
 ---
 
-## 🎯 Bonus Hedefler
+### ✅ HAFTA 5–8 (28 Temmuz – 24 Ağustos)
 
-| Hedef                           | Açıklama                                         |
-|--------------------------------|--------------------------------------------------|
-| 🎤 İngilizce teknik anlatım    | Haftada 1 defa kendi sesinle konu anlatımı yap  |
-| 📝 Haftalık öğrenim özeti      | Notion / Markdown ile haftalık özet çıkart      |
-| 📂 Proje portföyü              | Yaz sonunda en az 3 proje: C++, JS, ASM         |
+#### 🛠 HAFTA 5:
+- Gündüz: C++ Tree & Graph, Rust warp/hyper server, Assembly fonksiyonlar
+- Gece: Proje refactor, HTTP sunucu yapımı, LeetCode Graph
+
+#### 🛠 HAFTA 6:
+- Gündüz: JavaScript framework’e giriş (React veya basic MVC), Rust error handling
+- Gece: React mini proje, Rust logger ekle, Assembly dosya işlemleri
+
+#### 🛠 HAFTA 7:
+- Gündüz: Assembly ile sistem çağrıları (Linux syscall), C++ Heap/Trie
+- Gece: Dosya okuma/yazma uygulaması, DSA tekrar, networking görselleştirme
+
+#### 🛠 HAFTA 8:
+- Gündüz: Proje toparlama, portföy düzeni, öğrenilenlerin dökümantasyonu
+- Gece: "Bu Yaz Ne Öğrendim?" sunumu – slayt veya PDF
 
 ---
 
-## 📚 Önerilen Kaynaklar
+## 📂 Önerilen Projeler
 
-- **C++ & DSA:** NeetCode, William Fiset, LeetCode
+| Dil        | Proje Fikri                                |
+|------------|---------------------------------------------|
+| C++        | DSA soru havuzu çözümleri                   |
+| JavaScript | API bazlı hava durumu / not uygulaması      |
+| Rust       | Async TCP/HTTP sunucu (tokio / warp)        |
+| Assembly   | Mini hesap makinesi, metin işlemleri        |
+
+---
+
+## 📚 Kaynaklar
+
+- **C++ & DSA:** NeetCode, LeetCode, William Fiset (YouTube)
 - **JavaScript:** [javascript.info](https://javascript.info), freeCodeCamp
-- **Assembly:** [x86 Assembly Guide](https://cs.lmu.edu/~ray/notes/x86assembly/), NASM Docs, [PC Assembly (Paul Carter)](https://pacman128.github.io/static/pcasm-book.pdf)
-- **Networking:** Beej’s Guide, Fireship, Wireshark
-- **CS Videos:** Harvard CS50, MIT 6.006, Fireship (YouTube)
+- **Rust:** [The Rust Book](https://doc.rust-lang.org/book/), [Tokio.rs](https://tokio.rs/)
+- **Assembly:** [Low Level Learning](https://www.youtube.com/@lowlevellearning), NASM Guide, Beej’s Guide
+- **Networking:** Beej’s Guide to Network Programming, Tokio async, Boost.Asio
 
+---
+
+## 🎯 Nihai Hedef
+
+- 📝 3+ proje ile portföy oluşturma (GitHub + CV)
 
 ---
