@@ -59,6 +59,8 @@
     }
     .register {
       padding: 0.5rem;
+      text-align: right;
+      padding-right: 1rem;
     }
     .bureau-link {
       color: #6c00ac;
@@ -68,6 +70,15 @@
     .bureau-list {
       padding: 3rem 2rem;
     }
+    .logout-button {
+      margin-left: 1rem;
+      background: #6c00ac;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -76,7 +87,7 @@
     <p>Alanına Göre Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
   </header>
 
-  <div class="register">
+  <div class="register" id="userSection">
     <a href="register.html">Giriş Yap / Kayıt Ol</a>
   </div>
 
@@ -132,7 +143,21 @@
       displayBureaus(filtered);
     }
 
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function logout() {
+      localStorage.removeItem('loggedInUser');
+      window.location.href = 'index.html';
+    }
+
     window.onload = () => {
+      const user = getQueryParam('user') || localStorage.getItem('loggedInUser');
+      if (user) {
+        document.getElementById('userSection').innerHTML = `<strong>Merhaba, ${user}</strong><button class="logout-button" onclick="logout()">Çıkış Yap</button>`;
+      }
       document.getElementById('bureauList').style.display = 'none';
     }
   </script>
