@@ -16,6 +16,10 @@ header {
     text-align: center;
 }
 
+.main-header {
+    text-shadow: 2px 2px 5px black;
+}
+
 main {
     flex: 1;
     padding: 20px;
@@ -54,6 +58,15 @@ footer {
     border-style: inherit;
     border-radius: 20px;
     width: 500px;
+    box-shadow: 2px 1px 7px black;
+}
+
+#search-button {
+    font-size: medium; 
+    width: 60px; 
+    background-color: #f9f9f9; 
+    border-style: inherit; 
+    border-radius: 20px;
 }
 
 .lawyer-list {
