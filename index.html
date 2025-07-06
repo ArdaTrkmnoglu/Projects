@@ -6,12 +6,26 @@
   <title>Ana Sayfa - avukatım.com</title>
   <style>
     body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f9f9f9;
     }
     header {
+      background-color: #6c00ac;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    footer {
       background-color: #6c00ac;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: white;
@@ -84,26 +98,35 @@
 <body>
   <header>
     <h1>avukatım.com</h1>
-    <p>Alanına Göre Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
+    <p>Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
   </header>
 
   <div class="register" id="userSection">
-    <a href="register.html">Giriş Yap / Kayıt Ol</a>
+    <a href="register.html">
+      <img src="person.crop.circle.png" alt="Giriş Yap / Kayıt Ol" width="38px">
+    </a>
   </div>
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Anahtar kelime...">
-    <select id="fieldSelect">
-      <option value="">Tüm Alanlar</option>
-      <option value="Ceza Hukuku">Ceza Hukuku</option>
-      <option value="Ticaret Hukuku">Ticaret Hukuku</option>
-      <option value="Aile Hukuku">Aile Hukuku</option>
-      <option value="İş Hukuku">İş Hukuku</option>
-    </select>
-    <button onclick="filterBureaus()">Ara</button>
-  </div>
+  <main>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Anahtar kelime...">
+      <select id="fieldSelect">
+        <option value="">Tüm Alanlar</option>
+        <option value="Ceza Hukuku">Ceza Hukuku</option>
+        <option value="Ticaret Hukuku">Ticaret Hukuku</option>
+        <option value="Aile Hukuku">Aile Hukuku</option>
+        <option value="İş Hukuku">İş Hukuku</option>
+      </select>
+      <button onclick="filterBureaus()">Ara</button>
+    </div>
 
-  <div class="bureau-list" id="bureauList"></div>
+    <div class="bureau-list" id="bureauList"></div>
+  </main>
+
+  <footer>
+    <p>avukatım.com - Demo</p>
+    <p>&copy;2025 Fatih Doğmaz, A. Arda Türkmenoğlu</p>
+  </footer>
 
   <script>
     const bureaus = [

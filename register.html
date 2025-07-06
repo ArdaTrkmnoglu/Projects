@@ -6,6 +6,9 @@
   <title>Giriş Yap - avukatım.com</title>
   <style>
     body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -17,6 +20,22 @@
       color: white;
       padding: 1rem;
       text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    footer {
+      background-color: #6c00ac;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .back {
+      padding: 0.5rem;
+      text-align: right;
+      padding-right: 1rem;
     }
     .search-container, .auth-container {
       padding: 2rem;
@@ -38,17 +57,30 @@
 <body>
   <header>
     <h1>avukatım.com</h1>
-    <p>Alanına Göre Uzman Avukatları Bulun</p>
+    <p>Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
   </header>
 
-  <div class="auth-container">
-    <h2>Giriş / Kayıt</h2>
-    <input type="text" id="username" placeholder="Kullanıcı adı">
-    <input type="password" id="password" placeholder="Şifre">
-    <button onclick="login()">Giriş Yap</button>
-    <button onclick="register()">Kayıt Ol</button>
-    <p id="authMessage"></p>
+  <div class="back">
+    <a href="index.html">
+      <img src="back.png" alt="Geri Dön" width="38px">
+    </a>
   </div>
+
+  <main>
+    <div class="auth-container">
+      <h2>Giriş / Kayıt</h2>
+      <input type="text" id="username" placeholder="Kullanıcı adı">
+      <input type="password" id="password" placeholder="Şifre">
+      <button onclick="login()">Giriş Yap</button>
+      <button onclick="register()">Kayıt Ol</button>
+      <p id="authMessage"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>avukatım.com - Demo</p>
+    <p>&copy;2025 Fatih Doğmaz, A. Arda Türkmenoğlu</p>
+  </footer>
 
   <script>
     let users = [];
