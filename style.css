@@ -46,6 +46,7 @@ footer {
 .search-container, .auth-container {
     padding: 2rem;
     text-align: center;
+    margin: auto;
 }
 
 .search-container input, .search-container select, .auth-container input {
@@ -57,16 +58,22 @@ footer {
 #searchInput {
     border-style: inherit;
     border-radius: 20px;
-    width: 500px;
+    width: 44%;
     box-shadow: 2px 1px 7px black;
 }
 
-#search-button {
-    font-size: medium; 
-    width: 60px; 
+#fieldSelect, #search-button {
+    font-size: small; 
+    width: auto; 
     background-color: #f9f9f9; 
-    border-style: inherit; 
-    border-radius: 20px;
+    border-style: inherit;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1.5px #404040;    
+}
+
+#search-button {
+    text-align: center;
+    width: 60px;
 }
 
 .lawyer-list {

@@ -25,6 +25,7 @@
   <main>
     <div class="search-container">
       <input type="text" id="searchInput" placeholder="Anahtar kelime...">
+      <br><br>
       <select id="fieldSelect">
         <option value="">Tüm Alanlar</option>
         <option value="Ceza Hukuku">Ceza Hukuku</option>
@@ -44,13 +45,15 @@
   </footer>
 
   <script>
-    const bureaus = [
-      { id: 1, name: "Erciyes Hukuk Bürosu", field: "Ceza Hukuku", city: "Kayseri", description: "Ceza hukuku davalarında uzman kadro.", keywords: "kayseri, ceza, tahkim, tazminat" },
-      { id: 2, name: "Demirler Hukuk", field: "Ticaret Hukuku", city: "Ankara", description: "Ticaret, şirket danışmanlığı ve sözleşme yönetimi.", keywords: "ankara, ticaret, alacak, verecek, borç, mal davası, icra, tazminat" },
-      { id: 3, name: "Kaya Hukuk", field: "Aile Hukuku", city: "İzmir", description: "Aile içi davalarda profesyonel temsil.", keywords: "izmir, aile, boşanma, evlilik, mal paylaşımı, nafaka" },
-      { id: 4, name: "Çelik Hukuk Ofisi", field: "İş Hukuku", city: "Bursa", description: "İşçi-işveren ilişkilerinde dava ve danışmanlık.", keywords: "bursa, iş, şirket, işçi, işveren, tazminat"},
-      { id: 5, name: "Toprak Legal", field: "Ceza Hukuku", city: "İstanbul", description: "Ceza davaları, savunma ve temsil.", keywords: "istanbul, ceza, tahkim, tazminat, yaralama, gasp, şiddet" }
-    ];
+    let bureaus = [];
+    fetch("burolar.json")
+      .then(response => response.json())
+      .then(data => {
+        bureaus = data;
+      })
+      .catch(error => {
+        console.error('Veriler yüklenirken hata oluştu:', error);
+      });
 
     function displayBureaus(filteredBureaus) {
       const container = document.getElementById('bureauList');

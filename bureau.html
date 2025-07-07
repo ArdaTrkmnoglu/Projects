@@ -50,13 +50,22 @@
   </div>
 
   <script>
-    const bureaus = [
-      { id: 1, name: "Erciyes Hukuk Bürosu", field: "Ceza Hukuku", city: "İstanbul", description: "Ceza hukuku davalarında uzman kadro.", phone: "(0212) 123 45 67", address: "Beyoğlu, İstanbul", hours: "09:00 - 18:00" },
-      { id: 2, name: "Demirler Hukuk", field: "Ticaret Hukuku", city: "Ankara", description: "Ticaret, şirket danışmanlığı ve sözleşme yönetimi.", phone: "(0312) 234 56 78", address: "Çankaya, Ankara", hours: "08:30 - 17:30" },
-      { id: 3, name: "Kaya Hukuk", field: "Aile Hukuku", city: "İzmir", description: "Aile içi davalarda profesyonel temsil.", phone: "(0232) 345 67 89", address: "Konak, İzmir", hours: "09:00 - 18:00" },
-      { id: 4, name: "Çelik Hukuk Ofisi", field: "İş Hukuku", city: "Bursa", description: "İşçi-işveren ilişkilerinde dava ve danışmanlık.", phone: "(0224) 456 78 90", address: "Osmangazi, Bursa", hours: "08:00 - 17:00" },
-      { id: 5, name: "Toprak Legal", field: "Ceza Hukuku", city: "İstanbul", description: "Ceza davaları, savunma ve temsil.", phone: "(0212) 567 89 01", address: "Kadıköy, İstanbul", hours: "10:00 - 19:00" }
-    ];
+    let bureaus = [];
+    fetch("burolar.json")
+      .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        bureaus = data;
+        displayBureauDetail(); 
+      })
+      .catch(error => {
+        console.error('Veriler yüklenirken hata oluştu:', error);
+        document.getElementById("bureauDetail").innerHTML = '<h1>Veriler yüklenirken hata oluştu.</h1>';
+      });
 
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -77,15 +86,16 @@
         <h1>${bureau.name}</h1>
         <p><strong>Uzmanlık Alanı:</strong> ${bureau.field}</p>
         <p><strong>Şehir:</strong> ${bureau.city}</p>
-        <p><strong>Telefon:</strong> ${bureau.phone}</p>
-        <p><strong>Adres:</strong> ${bureau.address}</p>
-        <p><strong>Çalışma Saatleri:</strong> ${bureau.hours}</p>
+        <p><strong>Telefon:</strong> ${bureau.phone || 'Bilgi yok'}</p>
+        <p><strong>Adres:</strong> ${bureau.address || 'Bilgi yok'}</p>
+        <p><strong>Çalışma Saatleri:</strong> ${bureau.hours || 'Bilgi yok'}</p>
         <p><strong>Açıklama:</strong> ${bureau.description}</p>
         <a href="index.html" class="back-link">← Geri Dön</a>
       `;
     }
 
-    window.onload = displayBureauDetail;
+    // No need for window.onload for displayBureauDetail here, as it's called after fetch.
+    // However, if there are other window.onload functions, this should be adjusted.
   </script>
 </body>
 </html>
