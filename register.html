@@ -13,19 +13,40 @@
     <p>Aradığınız Büroyu Saniyeler İçerisinde Bulun</p>
   </header>
 
-  <div class="register">
-    <a href="index.html">
-      <img src="back.png" alt="Geri Dön" width="38px">
-    </a>
+  <div class="top-bar">
+
+    <div class="navigation">
+      <img id="menu" src="menu.png" width="38px">
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkında</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+      </ul>
+    </nav>
+
+    </div>
+
+    <div class="register">
+      <a href="index.html">
+        <img src="back2.png" alt="Geri Dön" width="38px">
+      </a>
+    </div>
+
   </div>
+
+  
 
   <main>
     <div class="auth-container">
       <h2>Giriş / Kayıt</h2>
       <input type="text" id="username" placeholder="Kullanıcı adı">
       <input type="password" id="password" placeholder="Şifre">
-      <button onclick="login()">Giriş Yap</button>
-      <button onclick="register()">Kayıt Ol</button>
+      <br><br>
+      <button class="reg-button" onclick="login()">Giriş Yap</button>
+      &nbsp;
+      <button class="reg-button" onclick="register()">Kayıt Ol</button>
       <p id="authMessage"></p>
     </div>
   </main>
