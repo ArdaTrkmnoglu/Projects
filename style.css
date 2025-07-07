@@ -7,6 +7,8 @@ body {
     padding: 0;
     background: #f9f9f9;
     background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 header {
