@@ -256,6 +256,12 @@ footer {
     }
 }
 
+@media (min-width:2000px) {
+    body {
+        background-image: url(background_large.jpg);
+    }
+}
+
 @keyframes slideUp {
     from{transform: translateY(20px);}
 }
